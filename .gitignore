@@ -1,0 +1,44 @@
+*venv
+*__pycache__
+*reports
+*reports_local
+*backup
+*secret.env
+.env
+.log
+
+
+# general
+.DS_Store
+
+
+# Soldeer
+/dependencies
+
+# Foundry
+out/
+cache/
+broadcast/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+
+# TypeScript incremental build cache (do NOT commit)
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# secrets
+.env
+.env.local
+.vercel
+*.env
+
+
+# images
+backend/uploads/
+.aider*
