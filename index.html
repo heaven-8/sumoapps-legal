@@ -1,0 +1,212 @@
+<!--
+  SumoApps — umbrella landing page for the SumoApps product family.
+  ShotSumo is the first product; its own Support/Privacy/Terms pages live under shotsumo/.
+  Each future product gets its own sibling <product>/ directory plus one card here.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SumoApps</title>
+<style>
+  :root {
+    --font-display: ui-serif, "New York", Georgia, "Times New Roman", serif;
+    --font-ui: -apple-system, "SF Pro Text", system-ui, "Segoe UI", sans-serif;
+
+    --color-ground: #ECE7DE;
+    --color-surface: #F6F2EB;
+    --color-ink: #211E19;
+    --color-ink-soft: #6A6459;
+    --color-ink-faint: #98917F;
+    --color-line: #DBD4C7;
+    --color-accent: #D63B22;
+    --color-accent-deep: #B22E19;
+    --color-secondary: #2C477C;
+
+    --radius-card: 16px;
+    --radius-button: 8px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-ground: #17150F;
+      --color-surface: #201E16;
+      --color-ink: #F2ECDD;
+      --color-ink-soft: #A69D89;
+      --color-ink-faint: #736C5B;
+      --color-line: #322E23;
+      --color-accent: #F1543A;
+      --color-accent-deep: #D6412A;
+      --color-secondary: #7C99DB;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { overflow-x: hidden; }
+
+  body {
+    margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-ui);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-wrap: break-word;
+  }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  a { color: var(--color-accent); text-decoration: none; border-bottom: 1px solid transparent; }
+  a:hover { border-bottom-color: currentColor; }
+  a:active { color: var(--color-accent-deep); }
+
+  header.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--color-line);
+    margin-bottom: 40px;
+  }
+
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--color-ink); border-bottom: none; }
+  .brand-name { font-family: var(--font-display); font-weight: 500; font-size: 19px; letter-spacing: -0.01em; }
+
+  .hero { text-align: center; margin-bottom: 44px; }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 40px;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+  }
+  .tagline {
+    font-size: 18px;
+    color: var(--color-ink-soft);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  section.card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  section.card h2 {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 19px;
+    margin: 0 0 10px;
+  }
+  section.card p { margin: 0 0 12px; }
+  section.card p:last-child { margin-bottom: 0; }
+  section.card p.small { font-size: 14px; color: var(--color-ink-soft); }
+
+  .product { display: flex; gap: 16px; align-items: flex-start; }
+  .product-icon { flex: none; display: block; border-radius: 10px; margin-top: 2px; }
+  .product-info { flex: 1; min-width: 0; }
+  .product-info h3 {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 17px;
+    margin: 0 0 6px;
+  }
+  .product-info p { margin: 0 0 10px; }
+  .product-links a { margin-right: 16px; font-size: 14px; }
+  .product-links a:last-child { margin-right: 0; }
+
+  footer.site-footer {
+    margin-top: 48px;
+    padding: 24px 0 48px;
+    border-top: 1px solid var(--color-line);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--color-ink-faint);
+  }
+  footer.site-footer nav a { margin-left: 16px; color: var(--color-ink-faint); border-bottom: none; }
+  footer.site-footer nav a:first-child { margin-left: 0; }
+  footer.site-footer nav a:hover { color: var(--color-ink-soft); }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 0 18px; }
+    header.site-header { flex-direction: column; align-items: flex-start; padding: 16px 0; margin-bottom: 32px; }
+    h1 { font-size: 30px; }
+    .tagline { font-size: 16px; }
+    section.card { padding: 20px 20px; }
+    .product { flex-direction: column; }
+    footer.site-footer { flex-direction: column; }
+    footer.site-footer nav { display: flex; flex-wrap: wrap; }
+    footer.site-footer nav a:first-child { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site-header">
+    <span class="brand">
+      <span class="brand-name">SumoApps</span>
+    </span>
+  </header>
+
+  <section class="hero">
+    <h1>SumoApps</h1>
+    <p class="tagline">Small, native Mac apps built by a geek, for geeks. No telemetry, no accounts
+      you didn't ask for — everything stays on your own computer, and you choose where it goes.</p>
+  </section>
+
+  <section class="card">
+    <h2>Products</h2>
+    <div class="product">
+      <img class="product-icon" width="48" height="48" alt="ShotSumo app icon"
+        src="data:image/png;base64,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">
+      <div class="product-info">
+        <h3>ShotSumo</h3>
+        <p>A fast, native screenshot and annotation tool that lives in your Mac's menu bar. Free, with
+          no accounts, no telemetry, and no network access.</p>
+        <p class="product-links">
+          <a href="shotsumo/index.html">Support</a>
+          <a href="shotsumo/privacy.html">Privacy</a>
+          <a href="shotsumo/terms.html">Terms</a>
+        </p>
+      </div>
+    </div>
+    <p class="small">More SumoApps products will appear here as they ship.</p>
+  </section>
+
+  <section class="card">
+    <h2>About SumoApps</h2>
+    <p>SumoApps is an umbrella for a small family of independent Mac apps, made by one developer who
+      wanted software that minds its own business: no dark patterns, no accounts you didn't ask for,
+      and nothing sent anywhere it doesn't need to go.</p>
+    <p class="small">Each app ships with its own Privacy Policy and Terms of Use stating exactly what
+      that app does and doesn't do — check the specific product's page for the details that apply to
+      it.</p>
+  </section>
+
+  <section class="card">
+    <h2>Contact</h2>
+    <p>Questions about SumoApps, or about a specific app? Email
+      <a href="mailto:feedback@tips-flow.com">feedback@tips-flow.com</a> and we'll get back to you.</p>
+  </section>
+
+  <footer class="site-footer">
+    <span>© 2026 SumoApps</span>
+  </footer>
+
+</div>
+</body>
+</html>
